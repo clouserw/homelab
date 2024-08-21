@@ -19,6 +19,16 @@ spec:
       create: true
       passwordHash: $2a$10$4rLTARWd2BOlz6m86hMSzO4041cOUG.3nsBwvP1pNPXsD9zVJUgN6
       username: admin
+    ingress:
+      enabled: true
+      className: nginx
+      hosts:
+        - host: weave.k8s.island
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
+    metrics:
+      enabled: true
     resources:
       requests:
         cpu: 100m
